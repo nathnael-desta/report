@@ -1,0 +1,288 @@
+@font-face {
+    font-family: hanken;
+    src: url(./assets/fonts/HankenGrotesk-VariableFont_wght.ttf);
+}
+@font-face {
+    font-family: big;
+    src: url(./assets/fonts/static/HankenGrotesk-ExtraBold.ttf);
+}
+@font-face {
+    font-family: large;
+    src: url(./assets/fonts/static/HankenGrotesk-Bold.ttf);
+}
+
+html, body {
+    margin: 0;
+    height: 100%;
+    overflow: hidden
+}
+
+* {
+    max-height: 100vh;
+}
+
+body {
+    background-color: rgb(245, 245, 245);
+    font-family: hanken;
+    
+    
+}
+
+
+.container {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    
+
+    
+}
+
+.content {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    width: 45%;
+    height: 70%;
+    border-radius: 20px;
+    overflow: hidden;
+    
+
+    
+}
+
+.first {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(hsl(252, 100%, 67%),hsl(241, 81%, 54%));
+    height: 300px;
+    border-radius: 20px;
+    color: white;
+    width: 50%;
+    height: 100%;
+    left: 0;
+    
+    
+}
+
+.circle {
+    position: absolute;
+    top: 20%;
+    width: 50%;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    background-image: linear-gradient( hsl(241, 60%, 51%)  ,hsl(252, 72%, 57%));
+
+}
+
+.score {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: big;
+    font-size: calc(5.5vw);
+}
+
+.total {
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: calc(1.5vw);
+    color: lightgray;
+}
+
+.result {
+    position: absolute;
+    top:10%;
+    font-size: 0.7rem;
+}
+
+
+.grade {
+    position: absolute;
+    top: 57%
+}
+
+.words {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 80px;
+    font-size: 0.65rem;
+    margin: 30px;  
+    text-align: center;
+    overflow: none;
+    
+}
+
+.second {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:start;
+    padding: 30px;
+    height: 300px;
+    border-radius: 20px;
+    width: 50%;
+    height: 100%;
+    left: 50%;
+    
+}
+
+
+.summary {
+    font-family: big;
+    top: 15%;
+    
+}
+
+.tests {
+    width: 95%;
+    display: grid ;
+    
+}
+
+.test {
+    position: relative;
+    right: 12%;
+    font-weight: bold;
+}
+
+.points {
+    position: relative;
+    color: rgb(48, 59, 89);
+    font-family: big;
+    left: 12%;
+    
+}
+
+
+.tests .max {
+    color: lightgray;
+    position: relative;
+    left: 12%;
+}
+
+.images {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.images {
+    display: inline;
+    position: relative;
+    top: 25%;
+}
+
+.reaction {
+    background-color: hsla(0, 100%, 67%, 0.1);
+    color: hsl(0, 100%, 67%);
+    border-radius: 5px;
+    margin: 5% 5% 5% 0;
+    height: 40px;
+    width: 80%;
+    text-align: center;
+    line-height: 40px;
+    
+}
+
+.memory {
+    background-color: hsla(39,100%,56%, 0.05);
+    color: hsl(39, 100%, 56%);
+    border-radius: 5px;
+    margin: 5% 5% 5% 0;
+    height: 40px;
+    width: 80%;
+    text-align: center;
+    line-height: 40px;
+}
+
+.verbal {
+    position: relative;
+    display: flex;
+    background-color: hsla(166,100%,37%, 0.05);
+    color: hsl(166, 100%, 37%);
+    border-radius: 5px;
+    margin: 5% 5% 5% 0;
+    height: 40px;
+    width: 80%;
+    text-align: center;
+    line-height: 40px;
+    
+}
+.verbal .test {
+    padding-left: 19%;
+}
+
+.verbal .points {
+    padding-left: 7.25%;
+}
+
+.visual {
+    background-color: hsla(234,85%,45%, 0.05);
+    color: hsl(234, 85%, 45%);
+    border-radius: 5px;
+    margin: 5% 5% 5% 0;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    width: 80%;
+}
+
+.visual .test {
+    padding-right: 5%;
+}
+
+.visual .points {
+    padding-left: 1%;
+}
+
+.continue {
+    background-color: rgb(48,59,89);
+    color: white;
+    bottom: 10%;
+    width: 312%;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 20px;
+    line-height: 40px;
+    cursor: pointer;
+    
+}
+
+button:hover {
+    background-color: hsl(252, 72%, 57%);
+}
+img {
+    float: left;
+}
+
+
+
+.attribution {
+    font-family: sans-serif;
+    margin: 0 auto;
+    position: absolute;
+    bottom: 2.5rem;
+    width: 100%;
+    height: 2.5rem;
+    
+}
