@@ -11,278 +11,247 @@
     src: url(./assets/fonts/static/HankenGrotesk-Bold.ttf);
 }
 
-html, body {
-    margin: 0;
-    height: 100%;
-    overflow: hidden
-}
 
 * {
-    max-height: 100vh;
-}
-
-body {
-    background-color: rgb(245, 245, 245);
-    font-family: hanken;
-    
-    
-}
-
-
-.container {
-    position: relative;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-    
-
-    
-}
-
-.content {
-    position: relative;
+    box-sizing: border-box; /* you should add this to set the sizes of the boxes acurately*/
     margin: 0;
     padding: 0;
+    font-size: 62.5%;
+}
+
+
+body {
+    font-family: hanken;
+    height: 100vh;
+    display: flex; /* start flex from the beginning*/ 
+    justify-content: center;
+    align-items: center;
+}
+
+/* Container Start  */
+.container {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: white;
-    width: 45%;
-    height: 70%;
-    border-radius: 20px;
-    overflow: hidden;
-    
-
-    
+    flex-wrap: wrap; /* to make content not leave the container but go to next line*/ 
+    width: max-content; /* uses the max regardless if it fits*/
+    height: fit-content;/* like max-content but wraps if it goes longer than available*/
+    /* the two divs will be left and right till the max width is reached then it will be top and bottom*/
+    border-top-left-radius: 2.5rem;
+    border-bottom-left-radius: 2.5rem;
+    border-bottom-right-radius: 2.5rem;
+    box-shadow: 1rem 2rem 2rem hsl(234, 85%, 45%, 0.1);
 }
 
-.first {
-    position: absolute;
+.result-container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    background: linear-gradient(hsl(252, 100%, 67%), hsl(241, 81%, 54%));
     align-items: center;
-    background-image: linear-gradient(hsl(252, 100%, 67%),hsl(241, 81%, 54%));
-    height: 300px;
-    border-radius: 20px;
-    color: white;
-    width: 50%;
-    height: 100%;
-    left: 0;
-    
-    
+    height: 38rem;
+    width: 28rem; /* now that we have set the height and width the container width and height will fit max content*/
+    border-radius: 2.5rem;
 }
 
-.circle {
-    position: absolute;
-    top: 20%;
-    width: 50%;
-    top: 35%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    aspect-ratio: 1 / 1;
-    border-radius: 50%;
-    background-image: linear-gradient( hsl(241, 60%, 51%)  ,hsl(252, 72%, 57%));
+.summary-container {
+    display: flex;
+    flex-direction: column;
+    border-bottom-right-radius: 2.5rem;
+    height: 38rem;
+    width: 28rem;
+    padding: 0rem 2.5rem;
+}
 
+/* Container end  */
+
+/* result-contents start  */
+
+h1.your-result {
+    color: hsl(241, 100%, 89%);
+    font-size: 1.8Rem;
+    margin-top: 2.5Rem;
+    margin-bottom: 2.5Rem;
+    font-weight: 700;
 }
 
 .score {
-    position: absolute;
-    top: 45%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-family: big;
-    font-size: calc(5.5vw);
-}
-
-.total {
-    position: absolute;
-    top: 75%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: calc(1.5vw);
-    color: lightgray;
-}
-
-.result {
-    position: absolute;
-    top:10%;
-    font-size: 0.7rem;
-}
-
-
-.grade {
-    position: absolute;
-    top: 57%
-}
-
-.words {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    top: 80px;
-    font-size: 0.65rem;
-    margin: 30px;  
-    text-align: center;
-    overflow: none;
-    
-}
-
-.second {
-    position: absolute;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items:start;
-    padding: 30px;
-    height: 300px;
-    border-radius: 20px;
-    width: 50%;
-    height: 100%;
-    left: 50%;
-    
-}
-
-
-.summary {
-    font-family: big;
-    top: 15%;
-    
-}
-
-.tests {
-    width: 95%;
-    display: grid ;
-    
-}
-
-.test {
-    position: relative;
-    right: 12%;
-    font-weight: bold;
-}
-
-.points {
-    position: relative;
-    color: rgb(48, 59, 89);
-    font-family: big;
-    left: 12%;
-    
-}
-
-
-.tests .max {
-    color: lightgray;
-    position: relative;
-    left: 12%;
-}
-
-.images {
-    display: flex;
-    justify-content: center;
     align-items: center;
+    background: linear-gradient(hsla(256, 72%, 46%, 1), hsla(241, 72%, 46%, 0));
+    border-radius: 50%;
+    width: 13.5rem;
+    height: 13.5rem;
 }
-.images {
+
+h2.marks-obtained {
+    font-size: 5rem;
+    color: hsl(0, 0%, 100%);
+}
+
+h2.totalmarks {
+    font-size: 1.2rem;
+    color: hsl(241, 100%, 89%);
+    font-weight: 500;
+}
+
+h2.great {
+    margin-top: 1.875rem;
+    font-size: 2.5rem;
+    color: hsl(0, 0%, 100%);
+}
+
+p {
+    font-size: 1.5rem;
+    color: hsl(241, 100%, 89%);
+    text-align: center;
+    padding: 0rem 4rem;
+    margin-top: 1rem;
+    font-weight: 500;
+}
+
+/* result-contents end  */
+/* summary-content start  */
+
+h1.summary{
+    font-size: 1.8rem;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    color: hsl(224, 30%, 27%);
+}
+
+img.icon {
+    width: 1.5rem;
+    margin-right: 0.5rem;
+}
+
+.content-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 22rem;
+}
+
+h3.overall {
+    text-align: end;
+    margin-right: 1rem;
+    font-size: 1.5rem;
+    color: hsl(224, 30%, 27%, 0.5);
+}
+
+.scored {
     display: inline;
-    position: relative;
-    top: 25%;
+    font-size: 1.5rem;
+    color: hsl(224, 30%, 27%);
 }
 
 .reaction {
-    background-color: hsla(0, 100%, 67%, 0.1);
-    color: hsl(0, 100%, 67%);
-    border-radius: 5px;
-    margin: 5% 5% 5% 0;
-    height: 40px;
-    width: 80%;
-    text-align: center;
-    line-height: 40px;
-    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: hsla(0, 100%, 67%, 0.05);
+    height: 4rem;
+    width: 100%;
+    border-radius: 0.5rem;
+}
+
+h2.reaction-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: start;
+    font-size: 1.5rem;
+    color: hsl(0, 100%, 67%, 0.9);
+    margin-left: 1rem;
 }
 
 .memory {
-    background-color: hsla(39,100%,56%, 0.05);
-    color: hsl(39, 100%, 56%);
-    border-radius: 5px;
-    margin: 5% 5% 5% 0;
-    height: 40px;
-    width: 80%;
-    text-align: center;
-    line-height: 40px;
+    background-color: hsla(39, 100%, 56%, 0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 4rem;
+    width: 100%;
+    border-radius: 0.5rem;
+}
+
+h2.memory-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: start;
+    font-size: 1.5rem;
+    color: hsl(39, 100%, 56%, 0.9);
+    margin-left: 1rem;
 }
 
 .verbal {
-    position: relative;
+    background-color: hsla(166, 100%, 37%, 0.05);
     display: flex;
-    background-color: hsla(166,100%,37%, 0.05);
-    color: hsl(166, 100%, 37%);
-    border-radius: 5px;
-    margin: 5% 5% 5% 0;
-    height: 40px;
-    width: 80%;
-    text-align: center;
-    line-height: 40px;
-    
-}
-.verbal .test {
-    padding-left: 19%;
+    justify-content: space-between;
+    align-items: center;
+    height: 4rem;
+    width: 100%;
+    border-radius: 0.5rem;
 }
 
-.verbal .points {
-    padding-left: 7.25%;
+h2.verbal-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: start;
+    font-size: 1.5rem;
+    color: hsl(166, 100%, 37%, 0.9);
+    margin-left: 1rem;
 }
 
 .visual {
-    background-color: hsla(234,85%,45%, 0.05);
-    color: hsl(234, 85%, 45%);
-    border-radius: 5px;
-    margin: 5% 5% 5% 0;
-    height: 40px;
-    text-align: center;
-    line-height: 40px;
-    width: 80%;
+    background-color: hsla(234, 85%, 45%, 0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 4rem;
+    width: 100%;
+    border-radius: 0.5rem;
 }
 
-.visual .test {
-    padding-right: 5%;
-}
-
-.visual .points {
-    padding-left: 1%;
+h2.visual-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: start;
+    font-size: 1.5rem;
+    color: hsl(234, 85%, 45%, 0.9);
+    margin-left: 1rem;
 }
 
 .continue {
-    background-color: rgb(48,59,89);
-    color: white;
-    bottom: 10%;
-    width: 312%;
-    border: none;
-    text-align: center;
-    text-decoration: none;
-    border-radius: 20px;
-    line-height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: hsl(224, 30%, 27%);
+    height: 4rem;
+    border-radius: 2.5rem;
+    color: hsl(0, 0%, 100%);
+    font-size: 1.375rem;
+    margin-top: 1.5rem;
+    font-weight: 800;
     cursor: pointer;
-    
 }
 
-button:hover {
-    background-color: hsl(252, 72%, 57%);
+.continue:hover {
+    transition: ease-in 0.3s; /* to change the color of the button slowly*/ 
+    background-color: hsl(234, 85%, 45%);
 }
-img {
-    float: left;
+
+@media screen and (max-width:599px) {
+    .container {
+        width: min-content; /* changed from width: max-content;*/
+    }
 }
 
 
 
-.attribution {
-    font-family: sans-serif;
-    margin: 0 auto;
-    position: absolute;
-    bottom: 2.5rem;
-    width: 100%;
-    height: 2.5rem;
-    
-}
+
